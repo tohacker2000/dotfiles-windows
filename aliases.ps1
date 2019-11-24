@@ -75,4 +75,44 @@ Set-Alias unmute Set-SoundUnmute
 Set-Alias update System-Update
 
 # Set GVim as default vim
+if (Test-Path "C:\Program Files (x86)\Vim\vim81\gvim.exe") {
+    Set-Alias gvim "C:\Program Files (x86)\Vim\vim81\gvim.exe"
+}
+
 Set-Alias vim gvim
+Set-Alias vi gvim
+Set-Alias q gvim
+
+## 
+${function:github} = { Set-Location ~\github }
+${function:gitlab} = { Set-Location ~\gitlab }
+${function:dotfiles} = { Set-Location ~\github\dotfiles-windows }
+
+${function:qal} = { 
+    $alias_ps1 = (Split-Path -parent $profile) + '\aliases_local.ps1'
+    ## $cmd = -join('gvim ', $alias_ps1)
+
+    Write-Host $cmd
+    
+    ## Invoke-Expression 로 실행한 내용은 wait 가 안 됨
+    ## $editor = Invoke-Expression $cmd
+    Start-Process -FilePath "C:\Program Files (x86)\Vim\vim81\gvim.exe" -ArgumentList $alias_ps1 -Wait    
+    
+    # wait editor completion
+    # if (! $editorId) {
+    #     Wait-Process -Id $editorId
+    # }
+       
+    ## reload
+    # Start-Sleep -Seconds 1
+    #. $alias_ps1
+    . Reload-Profile
+}
+
+${function:ar} = {
+    $alias_ps1 = (Split-Path -parent $profile) + '\aliases.ps1'
+    $alias_local_ps1 = (Split-Path -parent $profile) + '\aliases_local.ps1'
+
+    . $alias_ps1
+    . $alias_local_ps1
+}

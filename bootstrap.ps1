@@ -10,3 +10,5 @@ Copy-Item -Path ./home/** -Destination $home -Include **
 
 Remove-Variable componentDir
 Remove-Variable profileDir
+
+## load profile
