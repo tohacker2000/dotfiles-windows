@@ -75,8 +75,8 @@ Set-Alias unmute Set-SoundUnmute
 Set-Alias update System-Update
 
 # Set GVim as default vim
-if (Test-Path "C:\Program Files (x86)\Vim\vim81\gvim.exe") {
-    Set-Alias gvim "C:\Program Files (x86)\Vim\vim81\gvim.exe"
+if (Test-Path "C:\Program Files (x86)\Vim\vim82\gvim.exe") {
+    Set-Alias gvim "C:\Program Files (x86)\Vim\vim82\gvim.exe"
 }
 
 Set-Alias vim gvim
@@ -96,7 +96,7 @@ ${function:qal} = {
     
     ## Invoke-Expression 로 실행한 내용은 wait 가 안 됨
     ## $editor = Invoke-Expression $cmd
-    Start-Process -FilePath "C:\Program Files (x86)\Vim\vim81\gvim.exe" -ArgumentList $alias_ps1 -Wait    
+    Start-Process -FilePath "C:\Program Files (x86)\Vim\vim82\gvim.exe" -ArgumentList $alias_ps1 -Wait    
     
     # wait editor completion
     # if (! $editorId) {
