@@ -23,7 +23,7 @@ $utils = "7zip", "openssh", "putty", "sudo",  "sysinternals", "curl", "wget", "f
 $gnu = "grep", "awk","sed", "findutils"  # ,"gnuwin"
 
 $devels = "git", "git-lfs", "poshgit", "sourcetree",  "awscli", "jetbrainstoolbox", "nodejs-lts", "azure-cli",
-         "fiddler", "postman", "redis-64", "graphviz", "f.lux"
+         "fiddler", "postman", "redis-64", "graphviz", "f.lux", "mysql --version 5.7.18"
 
 $lang = "python --version 3.7.7", "pip", "golang", "php --version 7.4.5", "composer"
 
