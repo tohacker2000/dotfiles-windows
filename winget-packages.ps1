@@ -8,7 +8,7 @@ foreach ($item in $UTIL) {
 # winget install Everything
 
 #### Editor
-$EDITORS="vim.vim", "Notepad++.Notepad++
+$EDITORS="vim.vim", "Notepad++.Notepad++", "Inkscape.Inkscape"
 
 foreach ($item in $EDITORS) {
   winget install $item
